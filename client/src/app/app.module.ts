@@ -1,11 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './Components/Blocks/Menu/menu.component';
 import { UsersComponent } from './Components/Blocks/Users/users.component';
 import { CategoriesComponent } from './Components/Blocks/Categories/Categories.component';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { CategoriesComponent } from './Components/Blocks/Categories/Categories.c
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

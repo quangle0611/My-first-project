@@ -4,3 +4,19 @@
 menu {
     padding-inline-start: 0px!important;
 }
+.badge {
+    padding: 1em 2em!important;
+}
+.marahub{
+    width: 3em;
+    margin-left: 20px;
+}
+.thanhSearch {
+    margin-left: 4em;
+}
+.placeSearch{
+    padding-right: 15rem!important;
+}
+.xitlen{
+    margin-top: -9px!important;
+}
