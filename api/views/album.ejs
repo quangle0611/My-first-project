@@ -3,13 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="POST">
-        Tạo Album
-        <input type="text" name="txtAlbum">
-        <input type="submit" value="Add">
-    </form>
+    <div class="container">
+        <h2>Tạo Album</h2>
+        <div class="form-group">
+            <form action="" method="POST">
+                <input class="form-control-lg" type="text" name="txtAlbum" placeholder="Fill the Album name">
+                <input class="form-control-lg" type="submit" value="Add">
+            </form>
+        </div>
+        
+        <div>
+            <ul>
+                <% photos.forEach(function(photo){ %>
+                <li>
+                    a
+                    <img src="<%- photo.image %>" alt="">
+                </li>
+                <% }); %>
+            </ul>
+        </div>
+    </div>
+    
 </body>
 </html>

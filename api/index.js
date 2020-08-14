@@ -20,19 +20,28 @@ mongoose.connect('mongodb+srv://admin:quang123@cluster0.ss48k.mongodb.net/QAlbum
 });
 
 const album = require("./Moduels/album");
+const photo = require("./Moduels/photo");
 
 app.get("/", function(req, res){
     res.render("home");
 });
 
 app.get("/album", function(req, res){
-    res.render("album");
+    photo.find(function(err, items){
+        if(err){
+            res.send("Error");
+        }else{
+            console.log(items);
+            res.render("album", {photos:items});
+        }
+    })
 });
 
 app.post("/album", function(req, res){
     var newAlbum = new album({
         name: req.body.txtAlbum,
-        photoId: []
+        userId: "string",
+        photos_Id: []
     })
     newAlbum.save(function(err){
         if(err){
@@ -44,3 +53,25 @@ app.post("/album", function(req, res){
         }
     })
 })
+
+app.get("/photo", function(req, res){
+    res.render("photo");
+});
+
+app.post("/photo", function(req, res){
+    var newPhoto = new photo({
+        name: req.body.txtName,
+        userId: "string",
+        date: req.body.date,
+        image: req.body.image        
+    })
+    newPhoto.save(function(err){
+        if(err){
+            console.log("Save photo error!!!" + err);
+            res.json({kq:0});
+        } else{
+            console.log("Save photo successfully!");
+            res.json({kq:1});
+        }
+    })
+});
