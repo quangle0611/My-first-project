@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <h2>Tạo Album</h2>
-        <div class="form-group">
+        <div class="form-group" method="POST" enctype="multipart/form-data">
             <form action="" method="POST">
                 <input class="form-control-lg" type="text" name="txtAlbum" placeholder="Fill the Album name">
                 <input class="form-control-lg" type="submit" value="Add">
@@ -17,14 +17,16 @@
         </div>
         
         <div>
-            <ul>
-                <% photos.forEach(function(photo){ %>
-                <li>
-                    a
-                    <img src="<%- photo.image %>" alt="">
-                </li>
-                <% }); %>
-            </ul>
+            <h3>Chọn ảnh của bạn muốn thêm vào album</h3>
+            <form action="">
+                <ul>
+                    <% photos.forEach(function(photo){ %>
+                    <li><input type="checkbox" id="cb1" />
+                      <label for="cb1"><img src="../public/upload/<%- photo.image %>" /></label>
+                    </li>
+                    <% }); %>
+                </ul>
+            </form> 
         </div>
     </div>
     

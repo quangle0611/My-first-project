@@ -4,19 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <title>Document</title>
+    <title>Photo</title>
 </head>
 <body>
     <div class="container">
-
-    </div>
-    <form action="" method="POST">
         Add photo
-        <input class="form-control-lg"  type="text" name="txtName" placeholder="Name">
-        <input class="form-control-lg"  type="file" name="image">
-        <input class="form-control-lg"  type="submit" name="btnAdd" value="Add photo">
-        <label for="date">Date</label>
-        <input class="form-control-lg"  type="date" name="date">
-    </form>
+        <form action="" method="POST" enctype="multipart/form-data">
+            <input class="form-control-lg"  type="text" name="txtName" placeholder="Name">
+            <input class="form-control-lg"  type="file" name="image">
+            <label for="date">Date</label>
+            <input class="form-control-lg"  type="date" name="date">
+            <input class="form-control-lg"  type="submit" name="btnAdd" value="Add photo">
+        </form>
+    </div>
 </body>
 </html>
