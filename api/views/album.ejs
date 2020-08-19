@@ -22,7 +22,7 @@
                 <ul>
                     <% photos.forEach(function(photo){ %>
                     <li><input type="checkbox" id="cb1" />
-                      <label for="cb1"><img src="../public/upload/<%- photo.image %>" /></label>
+                      <label for="cb1"><img src="\<%- photo.path %>" /></label>
                     </li>
                     <% }); %>
                 </ul>

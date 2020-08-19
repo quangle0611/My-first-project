@@ -1,1 +1,18 @@
 <h2>Home</h2>
+<div class="row">
+    <div class="col-md-12">
+  
+      <div id="mdb-lightbox-ui"></div>
+  
+      <div class="mdb-lightbox no-margin" *ngFor="let photo of arrPhoto">
+  
+        <figure class="col-md-4">
+          <a routerLink="">
+            <img alt="picture" src="http://localhost:3000/public/upload/{{ photo.path }}" class="img-fluid">
+          </a>
+        </figure>
+
+      </div>
+  
+    </div>
+  </div>

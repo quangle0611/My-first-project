@@ -5,6 +5,14 @@ app.set("views", "./views");
 app.use(express.static("public"));
 app.listen(3000);
 
+app.use(function (req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    next();
+});
+
 //body-parser 
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -116,7 +124,8 @@ app.post("/photo", function(req,res){
             name: req.body.txtName,
             userId: "string",
             date: req.body.date,
-            image: req.file.filename        
+            image: req.file.filename,
+            path:  req.file.path       
             });
 
             newPhoto.save(function(err){
